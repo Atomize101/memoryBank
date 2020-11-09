@@ -34,3 +34,14 @@ export const updatePost = async (req, res) => {
 
 	res.json(updatedPost);
 };
+
+// 2nd Step is to create a controller after creating a route.
+
+export const deletePost = async (req, res) => {
+	const { id } = req.params;
+	if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('no post with that id');
+
+	await PostMessage.findByIdAndRemove(id);
+
+	res.json({ message: 'Post deleted Successfully' });
+};

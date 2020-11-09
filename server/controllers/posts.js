@@ -1,4 +1,4 @@
-import { Mongoose } from 'mongoose';
+import mongoose from 'mongoose';
 import PostMessage from '../models/postMessage.js';
 
 export const getPosts = async (req, res) => {
@@ -24,7 +24,7 @@ export const createPost = async (req, res) => {
 	}
 };
 
-export const updatePosts = async (req, res) => {
+export const updatePost = async (req, res) => {
 	const { id: _id } = req.params;
 	const post = req.body;
 

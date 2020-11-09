@@ -20,11 +20,24 @@ const Post = ({ post }) => {
 					<MoreHorizIcon fontSize="default" />
 				</Button>
 			</div>
-			<div classname={classes.detals}>
+			<div classname={classes.details}>
 				<Typography variant="body2" color="textSecondary">
-					{post.creator}
+					{post.tags.map((tag) => `#${tag}`)}
 				</Typography>
 			</div>
+			<Typography className={classes.title} gutterBottom variant="h5" component="h2">
+				{post.title}
+			</Typography>
+			<CardContent>
+				<Typography variant="body2" color="textSecondary" component="p">
+					{post.message}
+				</Typography>
+			</CardContent>
+			<CardActions className={classes.cardActions}>
+				<Button suze="small" color="primary" onClick={() => {}}>
+					<ThumbUpAltIcon fontSize="small" /> Like {post.likeCount}{' '}
+				</Button>
+			</CardActions>
 		</Card>
 	);
 };
